@@ -14,6 +14,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.smartsheet</groupId>
+            <artifactId>smartsheet-sdk-java</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jre8</artifactId>
             <version>${kotlin.version}</version>
