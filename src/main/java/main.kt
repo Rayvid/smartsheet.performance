@@ -18,11 +18,10 @@ fun main(args : Array<String>) {
 
     // Load entire sheet
     val sheet = smartSheet.sheetResources().getSheet(sheetId, null, null, null, null, null, null, null)
-
     var rows = sheet.rows;
     for (rowNo in 0 .. (rows.size - 1)) {
         val row = rows[rowNo]
-        println(row.getColumnByIndex(4))
+        println(row.cells[0].displayValue)
     }
 
     println("Elapsed time ${Duration.between(startTime, LocalDateTime.now()).toMillis()} ms")
