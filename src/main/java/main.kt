@@ -1,10 +1,11 @@
 package smartsheet.performance
 
 import com.smartsheet.api.SmartsheetBuilder
-import java.time.Duration;
-import java.time.LocalDateTime;
+import java.time.Duration
+import java.time.LocalDateTime
 
 fun main(args : Array<String>) {
+    System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "TRACE")
     val smartSheetToken = "4fvr17lry9y2unj177s1ijb2kk" // TODO this should come from some kind of config like ENV variable
 
     val startTime = LocalDateTime.now()
@@ -14,11 +15,11 @@ fun main(args : Array<String>) {
     val sheetId = sheets.data[0].id // Default to first sheet
 
     // TODO: Uncomment if you wish to read a specific sheet
-    // sheetId = 239236234L;
+    // sheetId = 239236234L
 
     // Load entire sheet
     val sheet = smartSheet.sheetResources().getSheet(sheetId, null, null, null, null, null, null, null)
-    var rows = sheet.rows;
+    var rows = sheet.rows
     for (rowNo in 0 .. (rows.size - 1)) {
         val row = rows[rowNo]
         println(row.cells[0].displayValue)
